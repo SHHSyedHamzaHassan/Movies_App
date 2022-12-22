@@ -5,11 +5,11 @@
     <string name="no_response_body">Error parsing data, EOD exception</string>
     <!--API Errors-->
     <string name="error_generic_api_error">Generic API error</string>
+    <string name="error_alert_button_ok">Ok</string>
 
     <!--Generic Strings-->
     <!-- TODO: Remove or change this placeholder text -->
     <string name="overview">Overview :</string>
-    <string name="movieImage">LoadMovieImage</string>
 
 
 </resources>

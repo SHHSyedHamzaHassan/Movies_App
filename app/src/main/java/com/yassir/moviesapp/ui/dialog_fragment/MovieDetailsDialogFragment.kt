@@ -8,6 +8,7 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.yassir.moviesapp.databinding.MovieDetailsDialogFragmentBinding
+import com.yassir.moviesapp.utils.CommonAlert
 import com.yassir.moviesapp.utils.CommonLoader
 import com.yassir.moviesapp.utils.setLoaderToFullScreen
 import com.yassir.moviesapp.viewmodel.MovieDetailsViewModel
@@ -39,6 +40,9 @@ class MovieDetailsDialogFragment : DialogFragment() {
             when (it) {
                 MovieDetailsViewModel.APIDataShareToFragment.MOVIE_DETAILS -> {
                     binding.apply { movieDetail = viewModel.getMovieDetailsResposne() }
+                }
+                MovieDetailsViewModel.APIDataShareToFragment.ERROR -> {
+                    CommonAlert.setAlert(activity!!, viewModel.errorMessage)
                 }
             }
         })

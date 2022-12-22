@@ -8,6 +8,7 @@ import com.yassir.moviesapp.services.request.MovieDetailsParams
 import com.yassir.moviesapp.ui.base.BaseViewModel
 import com.yassir.moviesapp.usecases.MovieDetailsUseCase
 import com.yassir.moviesapp.utils.Constants
+import com.yassir.moviesapp.utils.Constants.ApplicationConstants.Companion.EMPTY_STRING
 import com.yassir.moviesapp.wrappers.Event
 import com.yassir.moviesapp.wrappers.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,17 +24,13 @@ class MovieDetailsViewModel @Inject constructor(
     //#region Instance Variables
     private var movieId: Int = 0
     private lateinit var movieDetailsResponse: MovieDetailsResponse
+    var errorMessage: String = EMPTY_STRING
     private val _shareData =
         MutableLiveData<Event<APIDataShareToFragment>>()
     val shareData: LiveData<Event<APIDataShareToFragment>> =
         _shareData
-    private val _navigationAction =
-        MutableLiveData<Event<Navigation>>()
-    val navigationAction: LiveData<Event<Navigation>> =
-        _navigationAction
 
     //#endregion Instance Variables
-
 
     //#region API Methods
     private fun getMovieDetails() {
@@ -48,6 +45,8 @@ class MovieDetailsViewModel @Inject constructor(
                     }
                     else -> {
                         setLoading(loading = false)
+                        errorMessage = (it as Resource.Error).exception.message!!
+                        _shareData.postValue(Event(APIDataShareToFragment.ERROR))
                     }
                 }
             }
@@ -77,11 +76,7 @@ class MovieDetailsViewModel @Inject constructor(
 
     //#region Enumeration
     enum class APIDataShareToFragment {
-        MOVIE_DETAILS
-    }
-
-    enum class Navigation {
-        DISMISS
+        MOVIE_DETAILS, ERROR
     }
     //#endregion Enumeration
 }

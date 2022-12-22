@@ -22,8 +22,15 @@
     <dimen name="loader_height">200dp</dimen>
     <dimen name="loader_width">100dp</dimen>
 
+    <!--Layout Size-->
+    <dimen name="row_movie_list_height">200dp</dimen>
+
+    <!--card view-->
+    <dimen name="card_radius">5dp</dimen>
+
     <!--Text Sizes-->
     <dimen name="large_text_size">18sp</dimen>
     <dimen name="regular_text_size">16sp</dimen>
     <dimen name="small_text_size">14sp</dimen>
+
 </resources>

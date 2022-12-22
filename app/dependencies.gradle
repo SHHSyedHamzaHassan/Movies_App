@@ -69,8 +69,9 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
     implementation("androidx.cardview:cardview:1.0.0")
 
-    /*Styling Library*/
-    implementation 'com.airbnb.android:paris:2.0.0'
-    kapt 'com.airbnb.android:paris-processor:2.0.0'
+    //Unit Test Case
+    testImplementation "com.google.truth:truth:1.0.1"
+    androidTestImplementation "com.google.truth:truth:1.0.1"
+
 
 }

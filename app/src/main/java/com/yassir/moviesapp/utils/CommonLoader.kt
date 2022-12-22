@@ -18,7 +18,6 @@ class CommonLoader {
             dialog.setContentView(R.layout.loader_dialog)
             dialog.show()
         }
-
         fun dismissLoader() {
             if (dialog.isShowing)
                 dialog.dismiss()

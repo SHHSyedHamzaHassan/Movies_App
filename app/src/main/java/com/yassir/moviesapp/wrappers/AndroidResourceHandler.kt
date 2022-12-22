@@ -21,5 +21,4 @@ class AndroidResourceHandler(private val context: Context) : ResourceHandler {
 
     override fun getDrawable(id: Int): Drawable? =
         ContextCompat.getDrawable(context, id)
-
 }

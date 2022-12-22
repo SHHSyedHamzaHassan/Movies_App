@@ -21,16 +21,12 @@ class MovieViewModel @Inject constructor(
 
 
     //#region Instance Variables
-    private lateinit var movieListResponse : MovieListResponse
+    private lateinit var movieListResponse: MovieListResponse
+    lateinit var errorMessage: String
     private val _shareData =
         MutableLiveData<Event<APIDataShareToFragment>>()
     val shareData: LiveData<Event<APIDataShareToFragment>> =
         _shareData
-    private val _navigationAction =
-        MutableLiveData<Event<Navigation>>()
-    val navigationAction: LiveData<Event<Navigation>> =
-        _navigationAction
-
     //#endregion Instance Variables
 
     init {
@@ -50,6 +46,8 @@ class MovieViewModel @Inject constructor(
                     }
                     else -> {
                         setLoading(loading = false)
+                        errorMessage = (it as Resource.Error).exception.message!!
+                        _shareData.postValue(Event(APIDataShareToFragment.ERROR))
                     }
                 }
             }
@@ -73,10 +71,7 @@ class MovieViewModel @Inject constructor(
 
     //#region Enumeration
     enum class APIDataShareToFragment {
-        MOVIE_LIST
-    }
-    enum class Navigation {
-        DISMISS
+        MOVIE_LIST, ERROR
     }
     //#endregion Enumeration
 }

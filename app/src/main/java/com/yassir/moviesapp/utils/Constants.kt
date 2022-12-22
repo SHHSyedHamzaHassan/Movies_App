@@ -21,4 +21,12 @@ class Constants {
             const val MOVIE_ID = "movie_id"
         }
     }
+
+    class ApplicationConstants(){
+        companion object{
+            const val EMPTY_STRING = ""
+        }
+    }
+
+
 }

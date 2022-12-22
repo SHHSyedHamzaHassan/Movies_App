@@ -13,7 +13,7 @@ import com.yassir.moviesapp.utils.Constants.DataProviderEndPoints.Companion.IMAG
 fun urlToImage(view: ImageView, url: String?) {
     url?.let {
         val options =
-            RequestOptions.placeholderOf(R.drawable.loading).error(R.drawable.error)
+            RequestOptions.placeholderOf(R.drawable.loading_image).error(R.drawable.error)
         Glide.with(view).setDefaultRequestOptions(options).load(IMAGE_URL + url)
             .into(view)
     }

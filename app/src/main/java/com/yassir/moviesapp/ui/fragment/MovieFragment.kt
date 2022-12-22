@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.yassir.moviesapp.adapters.MovieListAdapter
 import com.yassir.moviesapp.databinding.MovieFragmentBinding
+import com.yassir.moviesapp.utils.CommonAlert.Companion.setAlert
 import com.yassir.moviesapp.utils.CommonLoader
 import com.yassir.moviesapp.viewmodel.MovieViewModel
 import com.yassir.moviesapp.wrappers.EventObserver
@@ -53,6 +54,9 @@ class MovieFragment : Fragment() {
                 MovieViewModel.APIDataShareToFragment.MOVIE_LIST -> {
                     movieListAdapter.setListdata(viewModel.getMovieListData().results!!)
                     movieListAdapter.notifyDataSetChanged()
+                }
+                MovieViewModel.APIDataShareToFragment.ERROR -> {
+                   setAlert(activity!!,viewModel.errorMessage)
                 }
             }
         })

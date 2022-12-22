@@ -23,6 +23,9 @@ class MovieDetailsUseCase(
                 is Resource.Success -> {
                     emit(Resource.Success(data.data))
                 }
+                is Resource.Error -> {
+                    emit(Resource.Error(data.exception))
+                }
                 else -> emit(Resource.Error(IllegalStateException(resourceHandler.getString(R.string.error_generic_api_error))))
             }
         }
