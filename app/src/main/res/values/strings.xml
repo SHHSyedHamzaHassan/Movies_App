@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Movies App</string>
+    <!--Internet Strings-->
+    <string name="error_no_network_available">No network available, please check your WiFi or Data connection</string>
+    <string name="no_response_body">Error parsing data, EOD exception</string>
+    <!--API Errors-->
+    <string name="error_generic_api_error">Generic API error</string>
+
+    <!--Generic Strings-->
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="overview">Overview :</string>
+    <string name="movieImage">LoadMovieImage</string>
+
+
+</resources>

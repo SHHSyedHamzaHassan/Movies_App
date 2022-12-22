@@ -1,0 +1,45 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    apply from:"versions.gradle"
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.1"
+        classpath('com.google.dagger:hilt-android-gradle-plugin:2.40.1')
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+
+        maven {
+            url 'https://www.jitpack.io'
+        }
+
+
+    }
+    task buildScriptDependencies(type: DependencyReportTask) {
+        configurations = project.buildscript.configurations
+    }
+
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

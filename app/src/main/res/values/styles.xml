@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Transparent Dialog theme-->
+    <style name="TranslucentDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:colorBackground">@color/transparent_bg_loader</item>
+    </style>
+</resources>

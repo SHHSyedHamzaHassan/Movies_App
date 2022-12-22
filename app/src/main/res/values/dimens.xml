@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="extra_large_spacing">80dp</dimen>
+    <dimen name="large_spacing">40dp</dimen>
+    <dimen name="general_spacing">20dp</dimen>
+    <dimen name="half_spacing">10dp</dimen>
+    <dimen name="quarter_spacing">5dp</dimen>
+    <dimen name="no_spacing">0dp</dimen>
+
+    <!--Percentages-->
+    <item name="percent_98" type="dimen" format="float">.98</item>
+    <item name="percent_95" type="dimen" format="float">.95</item>
+    <item name="percent_90" type="dimen" format="float">.9</item>
+    <item name="percent_80" type="dimen" format="float">.8</item>
+    <item name="percent_20" type="dimen" format="float">.2</item>
+    <item name="percent_15" type="dimen" format="float">.15</item>
+    <item name="percent_10" type="dimen" format="float">.1</item>
+    <item name="percent_5" type="dimen" format="float">.05</item>
+    <item name="percent_2" type="dimen" format="float">.02</item>
+
+    <!--Loader Specs-->
+    <dimen name="loader_height">200dp</dimen>
+    <dimen name="loader_width">100dp</dimen>
+
+    <!--Text Sizes-->
+    <dimen name="large_text_size">18sp</dimen>
+    <dimen name="regular_text_size">16sp</dimen>
+    <dimen name="small_text_size">14sp</dimen>
+</resources>
