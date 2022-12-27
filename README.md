@@ -1,6 +1,6 @@
 The repository is about Movie App Application which shows list of movies and there details.
 
-The project has following featues 
+The project has following features 
 
 used kotlin language,
 
